@@ -109,7 +109,7 @@ form.addEventListener("submit", async (e) => {
   }
 
   const subject = `Project enquiry: ${interest} (${data.get("name")})`;
-  const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nNeed: ${interest}\n\n${data.get("message")}`;
+  const body = `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nNeed: ${interest}\nBest time for a call: ${data.get("time") || "Not specified"}\n\n${data.get("message")}`;
   window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   status.className = "form-status ok";
   status.textContent = "Opening your email app. Press send there to deliver your message.";
